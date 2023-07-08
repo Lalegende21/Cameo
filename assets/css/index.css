@@ -1,0 +1,987 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    height: 100vh;
+    scroll-behavior: smooth;
+    font-family: 'roboto', sans-serif;
+}
+
+/******************************************************************start header***********************************************************************/
+header{
+    background-color: #007CFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+.label{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.label i{
+    font-size: 3rem;
+    margin-right: 1rem;
+}
+.label h1{
+    font-size: 3rem;
+}
+
+.navbar{
+    padding: 1rem;
+   margin-right: 55rem;
+}
+.navbar ul{
+    display: flex;
+    font-size: 1.6rem;
+}
+.navbar ul li{
+    list-style: none;
+    padding: 0 1rem;
+}
+.navbar a{
+    text-decoration: none;
+    color: #00ACFD;
+    padding: 1rem;
+}
+.navbar a:hover{
+    background-color: white;
+    color: #00ACFD;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+.first-a:link,
+.first-a:visited,
+.first-a:active{
+    color: white;
+}
+
+header input{
+    display: none;
+}
+.menu{
+    font-size: 3rem;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@media screen and ( max-width:1290px){
+    .menu{
+        visibility: visible;
+        opacity: 1;
+        margin-right: 5%;
+    }
+    .navbar{
+        position: absolute;
+        margin-left: 0;
+        background-color: #dadada;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 0;
+        transform-origin: left;
+        transform: translateX(-100%);
+        opacity: 1;
+        transition: 0.6s linear;
+    }
+    .navbar ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar li{
+        margin: 2rem 0;
+    }
+    .navbar a{
+        font-size: 2rem;
+    }
+    header input:checked ~ .navbar {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+    header input:checked ~ label::before {
+		content: "\f00d";
+	}
+}
+/********************************************************************end header*******************************************************/
+
+section{
+    display: block;
+    padding: 0 10%;
+}
+
+/********************************************************************start section1*******************************************************/
+.section1{
+    width: 100%;
+    height: 70rem;
+    padding: 0;
+    margin-bottom: 8rem;
+}
+.section1 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.section1 .bkg{
+    position: absolute;
+    top: 18%;
+    left: 26%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+.bkg h1{
+    font-size: 10rem;
+    text-transform: uppercase;
+    color: #007CFF;
+    margin-bottom: 4rem;
+    letter-spacing: 0.5rem;
+}
+.bkg label{
+    color: white;
+    font-size: 5rem;
+    letter-spacing: 0.4rem;
+    margin-bottom: 3rem;
+}
+.bkg p{
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.section1 .btn{
+    display: flex;
+    gap: 0.5rem;
+}
+.btn button{
+    padding: 0.8rem 1rem;
+    color: white;
+    background-color: #007CFF;
+    border: none;
+    border-radius: 0.3rem;
+}
+.btn button i{
+    margin-right: 0.3rem;
+}
+
+@media screen and (max-width: 420px){
+    .section1{
+        width: 100%;
+        height: 50rem;
+        padding: 0;
+        margin-bottom: 5rem;
+    }
+    .section1 .bkg{
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    .bkg h1{
+        font-size: 5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .bkg label{
+        font-size: 3rem;
+        letter-spacing: 0.4rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    .bkg p{
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        padding: 0 5%;
+    }
+}
+@media screen and (min-width: 421px) and (max-width: 911px) {
+    .section1{
+        height: 55rem;
+    }
+    .section1 .bkg{
+        top: 18%;
+        left: 8%;
+        padding: 1rem;
+    }
+    .bkg h1{
+        font-size: 6rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .bkg label{
+        font-size: 3.5rem;
+        letter-spacing: 0.4rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .bkg p{
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: 912px) and (max-width: 1279px) {
+    .section1{
+        height: 55rem;
+    }
+    .section1 .bkg{
+        top: 18%;
+        left: 18%;
+        padding: 1rem;
+    }
+    .bkg h1{
+        font-size: 6rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .bkg label{
+        font-size: 3.5rem;
+        letter-spacing: 0.4rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .bkg p{
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1299px){
+    .section1{
+        height: 55rem;
+    }
+    .section1 .bkg{
+        top: 18%;
+        left: 25%;
+        padding: 1rem;
+    }
+    .bkg h1{
+        font-size: 6rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .bkg label{
+        font-size: 3.5rem;
+        letter-spacing: 0.4rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .bkg p{
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+}
+
+
+/********************************************************************end section1*******************************************************/
+
+/********************************************************************start section2******************************************************/
+.section2{
+    margin-bottom: 8rem;
+}
+.section2 h2{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.section2 p{
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 420px) {
+    .section2{
+        padding: 0 2rem;
+    }
+    .section2 p{
+        text-align: justify;
+    }
+}
+
+
+/********************************************************************end section2******************************************************/
+
+
+/********************************************************************start section3******************************************************/
+.section3{
+    margin-bottom: 6rem;
+}
+.section3 h2{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.section3 p{
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.section3 video{
+    width: 100%;
+}
+
+/********************************************************************end section3******************************************************/
+
+/********************************************************************start section4******************************************************/
+.section4{
+    margin-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.section4 h2{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.section4 .sub-title{
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.slide{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+.slide input{
+    display: none;
+}
+.st{
+    width: 20%;
+    transition: 2s;
+}
+.st img{
+    width: 800px;
+    height: 500px;
+}
+.nav-m{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+.m-btn{
+    border: 2px solid #23e3c2;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.m-btn:not(:last-child){
+    margin-right: 30px;
+}
+.m-btn:hover{
+    background-color: #23e3c2;
+}
+#radio1:checked ~.first{
+    margin-left: 0;
+}
+#radio2:checked ~.first{
+    margin-left: -20%;
+}
+#radio3:checked ~.first{
+    margin-left: -40%;
+}
+#radio4:checked ~.first{
+    margin-left: -60%;
+}
+
+.nav-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 460px;
+    display: flex;
+    justify-content: center;
+}
+.nav-auto div{
+    border: 2px solid #23e3c2;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+.nav-auto div:not(:last-child){
+    margin-right: 30px;
+    justify-content: center;
+}
+#radio1:checked ~ .nav-auto .a-b1{
+    background-color: #23e3c2;
+}
+#radio2:checked ~ .nav-auto .a-b2{
+    background-color: #23e3c2;
+}
+#radio3:checked ~ .nav-auto .a-b3{
+    background-color: #23e3c2;
+}
+#radio4:checked ~ .nav-auto .a-b4{
+    background-color: #23e3c2;
+}
+
+
+@media screen and (max-width: 420px) {
+    .section4{
+        padding: 0 3rem;
+    }
+    .slider{
+        width: 400px;
+        height: 400px;
+    }
+    .slide{
+        width: 500%;
+        height: 400px;
+    }
+    .st img{
+        width: 400px;
+        height: 400px;
+    }
+    .nav-m{
+        width: 400px;
+    }
+    .nav-auto{
+        width: 400px;
+        margin-top: 360px;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 299px){
+    .slider{
+        width: 250px;
+        height: 250px;
+    }
+    .slide{
+        width: 500%;
+        height: 250px;
+    }
+    .st img{
+        width: 350px;
+        height: 250px;
+    }
+    .nav-m{
+        width: 250px;
+    }
+    .nav-auto{
+        width: 250px;
+        margin-top: 210px;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 420px) {
+    .slider{
+        width: 350px;
+        height: 350px;
+    }
+    .slide{
+        height: 350px;
+    }
+    .st img{
+        width: 350px;
+        height: 350px;
+    }
+    .nav-m{
+        width: 350px;
+    }
+    .nav-auto{
+        width: 350px;
+        margin-top: 310px;
+    }
+}
+
+@media screen and (min-width: 421px) and (max-width: 767px){
+    .slider{
+        width: 500px;
+        height: 500px;
+    }
+    .slide{
+        width: 500%;
+        height: 500px;
+    }
+    .st img{
+        width: 500px;
+        height: 500px;
+    }
+    .nav-m{
+        width: 500px;
+    }
+    .nav-auto{
+        width: 500px;
+        margin-top: 460px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 800px){
+    .slider{
+        width: 750px;
+        height: 750px;
+    }
+    .slide{
+        width: 500%;
+        height: 750px;
+    }
+    .st img{
+        width: 750px;
+        height: 750px;
+    }
+    .nav-m{
+        width: 750px;
+    }
+    .nav-auto{
+        width: 750px;
+        margin-top: 708.1px;
+    }
+}
+
+/********************************************************************end section4******************************************************/
+
+/********************************************************************start section5******************************************************/
+.section5{
+    margin-bottom: 6rem;
+}
+.h2{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2.5rem;
+    height: 25rem;
+}
+.container div{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+}
+.container div i{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #007CFF;
+}
+.container div label{
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+.container div p{
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+.container div button{
+    padding: 0.8rem 1rem;
+    color: white;
+    background-color: #007CFF;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+@media screen and (max-width: 420px){
+    .section5{
+        margin-top: 40rem;
+        margin-bottom: 6rem;
+        padding: 0 5%;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container div p{
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 421px) and (max-width: 950px){
+    .section5{
+        margin-top: 40rem;
+        margin-bottom: 6rem;
+        padding: 0 5%;
+    }
+    .container{
+        flex-direction: column;
+    }
+}
+
+
+/********************************************************************end section5******************************************************/
+
+/********************************************************************start section6******************************************************/
+.section6{
+    margin-bottom: 6rem;
+}
+.section6 h2{
+    font-size: 4rem;
+    text-align: center;
+}
+.table{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.table1, .table2, .table3{
+    border-collapse: collapse;
+    width: 32%;
+}
+.table1 td{
+    border: 0.2rem solid #F7F7F7;
+    padding: 1rem 5rem 1rem 1.5rem;
+    font-size: 1.4rem;
+}
+.table .td1{
+    padding: 2.6rem 1.5rem;
+    border-top: 0.2rem solid #00AB4E;
+}
+.table1 .first-tr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #00AB4E;
+    text-align: center;
+    font-size: 2.5rem;
+    border: 0.2rem solid #00AB4E;
+}
+.table1 .last-tr{
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: center;
+}
+.table1 .last-tr button{
+    padding: 0.8rem 1rem;
+    background-color: #00AB4E;
+    border: none;
+    border-radius: 0.4rem;
+}
+.table1 span{
+    font-size: 1.8rem;
+}
+
+
+.table2{
+    margin-top: 4rem;
+}
+.table2 td{
+    border: 0.2rem solid #F7F7F7;
+    padding: 1rem 5rem 1rem 1.5rem;
+    font-size: 1.4rem;
+}
+.table2 .first-tr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFBE00;
+    text-align: center;
+    font-size: 2.5rem;
+    border: 0.2rem solid #FFBE00;
+}
+.table .td2{
+    padding: 2.6rem 1.5rem;
+    border-top: 0.2rem solid #FFBE00;
+}
+.table2 .last-tr{
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: center;
+}
+.table2 .last-tr button{
+    padding: 0.8rem 1rem;
+    background-color: #FFBE00;
+    border: none;
+    border-radius: 0.4rem;
+}
+.table2 span{
+    font-size: 1.8rem;
+}
+
+
+.table3{
+    margin-top: 6.5rem;
+}
+.table3 td{
+    border: 0.2rem solid #F7F7F7;
+    padding: 1rem 5rem 1rem 1.5rem;
+    font-size: 1.4rem;
+}
+.table .td3{
+    padding: 2rem 1.5rem;
+    border-top: 0.2rem solid #F41B36;
+}
+.table3 .first-tr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F41B36;
+    text-align: center;
+    font-size: 2.5rem;
+    border: 0.2rem solid #F41B36;
+}
+.table3 .last-tr{
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: center;
+}
+.table3 .last-tr button{
+    padding: 0.8rem 1rem;
+    background-color: #F41B36;
+    border: none;
+    border-radius: 0.4rem;
+}
+.table3 span{
+    font-size: 1.8rem;
+}
+
+@media screen and (max-width: 420px) {
+    .section6{
+        margin-top: 42rem;
+        margin-bottom: 6rem;
+        padding: 0 5%;
+    }
+    .table{
+        display: flex;
+        flex-direction: column;
+    }
+    .table1, .table2, .table3{
+        width: 100%;
+    }
+    .section6 h2{
+        margin-bottom: 4rem;
+    }
+}
+
+@media screen and (min-width: 421px) and (max-width: 950px){
+    .section6{
+        margin-top: 42rem;
+        margin-bottom: 6rem;
+        padding: 0 5%;
+    }
+    .table{
+        display: flex;
+        flex-direction: column;
+    }
+    .table1, .table2, .table3{
+        width: 100%;
+    }
+    .section6 h2{
+        margin-bottom: 4rem;
+    }
+}
+
+/********************************************************************end section6******************************************************/
+
+
+/********************************************************************start section7******************************************************/
+.section7{
+    margin-bottom: 6rem;
+}
+.section7 h2{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.comment{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+.comment div{
+    font-size: 1.6rem;
+    gap: 4rem;
+    padding: 2rem 5rem;
+}
+.comment div p{
+    margin-bottom: 2rem;
+}
+.comment cite{
+    color: #b6b6b6;
+}
+
+@media screen and (max-width: 420px) {
+    .section7{
+        margin-top: 6rem;
+        margin-bottom: 5rem;
+        padding: 0 5%;
+    }
+    .comment{
+        display: flex;
+        flex-direction: column;
+    }
+    .comment div{
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+    .comment div p{
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: 421px) and (max-width: 950px){
+    .section7{
+        margin-top: 6rem;
+        margin-bottom: 5rem;
+        padding: 0 5%;
+    }
+    .comment{
+        display: flex;
+        flex-direction: column;
+    }
+    .comment div{
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+    .comment div p{
+        margin-bottom: 1rem;
+    }
+}
+
+/********************************************************************end section7******************************************************/
+
+
+/********************************************************************start section8******************************************************/
+.section8{
+    background-color: #69757E;
+    padding: 4rem 10%;
+}
+.section8 h2{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.section8 p{
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+.section8 .input{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+.section8 .input input{
+    width: 50%;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+}
+.section8 label{
+    color: white;
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+.section8 label a{
+    text-decoration: none;
+    color: #007CFF;
+}
+.section8 button{
+    float: right;
+    margin-top: -1rem;
+    padding: 0.8rem 1rem;
+    background-color: #313A3F;
+    border: none;
+    border-radius: 0.4rem;
+    color: white;
+}
+
+@media screen and (max-width: 420px){
+    .section8{
+        padding: 4rem 5%;
+    }
+}
+
+
+
+/********************************************************************end section8******************************************************/
+
+/********************************************************************start footer******************************************************/
+footer{
+    padding: 4rem;
+}
+.foot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.foot1, .foot2, .foot3, .foot4{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.foot label{
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+footer a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #007CFF;
+}
+.foot4 p{
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+.copywrite{
+    display: flex;
+    justify-content: space-between;
+}
+.copywrite p{
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width: 420px){
+    .foot{
+        flex-direction: column;
+        align-items: start;
+        padding-left: 3rem;
+    }
+    .foot label{
+        font-size: 1.8rem;
+    }
+    footer a{
+        font-size: 1.5rem;
+    }
+    .foot4 p{
+        font-size: 1.6rem;
+    }
+    .copywrite{
+        flex-direction: column;
+        align-items: start;
+    }
+    .copywrite p{
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+    }
+}
+
+
+/********************************************************************end footer******************************************************/
